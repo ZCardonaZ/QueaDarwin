@@ -1,24 +1,33 @@
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: var(--font-family, 'Segoe UI', sans-serif);
+  background-color: var(--background-secondary);
+  color: var(--text-primary);
 }
 
 .navbar {
-  background-color: #242424;
-  color: white;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 2px 4px var(--shadow-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .btn-carrito {
-  border: none;
-  color: white;
+  background-color: var(--accent-primary);
+  color: var(--background-primary);
   padding: 0.5rem 1rem;
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
+  border: none;
+}
+
+.btn-carrito:hover {
+  background-color: var(--accent-hover);
 }
 
 .galeria {
@@ -27,33 +36,70 @@ body {
   gap: 2rem;
   justify-content: center;
   padding: 2rem;
+  background-color: var(--background-secondary);
 }
 
 .producto {
-  background: rgb(37, 37, 37);
+  background: var(--card-background);
   border-radius: 12px;
-  padding: 1rem;
+  padding: 1.5rem;
   width: 280px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px var(--shadow-color);
   text-align: center;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-button {
-  margin: 0.5rem 0 0.5rem 0;
-  padding: 0.5rem 1rem;
-  color: white;
+.producto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px var(--shadow-color);
+}
+
+.producto h2 {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.producto p {
+  font-size: 1.1rem;
+  color: var(--accent-primary);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.producto button {
+  margin: 0.5rem 0;
+  padding: 0.6em 1.2em;
+  background-color: var(--accent-primary);
+  color: var(--background-primary);
   border: none;
   border-radius: 6px;
   cursor: pointer;
 }
 
+.producto button:hover {
+  background-color: var(--accent-hover);
+}
+
 .carrito {
-  background: #fff;
+  background: var(--card-background);
   border-radius: 8px;
-  padding: 1rem;
-  margin: 1rem auto;
+  padding: 1.5rem;
+  margin: 2rem auto;
   max-width: 500px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px var(--shadow-color);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.carrito h2 {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .carrito ul {
@@ -65,23 +111,67 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0.5rem 0;
+  margin-bottom: 0.75rem;
+  padding: 0.75rem;
+  background-color: var(--background-secondary);
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+}
+
+.carrito li button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.9rem;
+}
+.carrito li button:hover {
+  background-color: #c82333;
+}
+
+.carrito h3 {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-top: 1rem;
+}
+
+.carrito .total {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--accent-primary);
+  margin-top: 0.5rem;
 }
 
 .btn-comprar {
-  margin-top: 1rem;
-  padding: 0.7rem 1.2rem;
-  color: white;
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--accent-primary);
+  color: var(--background-primary);
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  width: 100%;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.btn-comprar:hover {
+  background-color: var(--accent-hover);
 }
 
 .confirmacion {
   max-width: 600px;
   margin: 2rem auto;
-  background: #e6ffe6;
+  background: #e6f7ff;
+  color: #004085;
   padding: 1.5rem;
   border-radius: 10px;
+  border: 1px solid #b8daff;
+  text-align: center;
 }
 
+.confirmacion h2 {
+  color: #004085;
+  margin-bottom: 1rem;
+}

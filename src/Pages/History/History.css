@@ -1,30 +1,98 @@
 .historial {
   max-width: 800px;
   margin: 2rem auto;
-  padding: 2rem;
-  margin-top: 9rem;
-  background: #242424;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border: 1px solid #636363;
-  
+  padding: 2.5rem;
+  background-color: var(--background-secondary);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px var(--shadow-color);
+  color: var(--text-primary);
+}
+
+.historial h2 {
+  text-align: center;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
 }
 
 .factura-item {
-  background: rgb(47, 47, 47);
-
-  padding: 1rem;
+  background: var(--card-background);
+  padding: 1.5rem;
   margin-bottom: 1.5rem;
-  border-radius: 8px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.factura-item p {
+  margin: 0.5rem 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.factura-item p strong {
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 .factura-item ul {
   padding-left: 1.5rem;
   list-style: disc;
+  margin: 1rem 0;
+  color: var(--text-primary);
+}
+
+.factura-item li {
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+}
+
+.factura-item hr {
+  border: 0;
+  border-top: 1px solid var(--border-color);
+  margin: 1.5rem 0;
+}
+
+.historial .volver-inicio,
+.historial #empty-btn {
+  display: block;
+  width: fit-content;
+  margin: 2rem auto 0;
+  background-color: var(--accent-primary);
+  color: var(--background-primary);
+  border: 1px solid var(--accent-primary);
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.historial .volver-inicio:hover,
+.historial #empty-btn:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.vacio {
+  text-align: center;
+  padding: 2rem;
 }
 
 .historial-vacio {
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 1rem;
   font-size: 1.2rem;
+  color: var(--text-secondary);
+  background-color: var(--card-background);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px dashed var(--border-color);
+}
+
+.historial #empty-btn {
+  margin-top: 1.5rem;
 }

@@ -1,33 +1,35 @@
-/* CartPage.css */
-
 .cart-page {
   max-width: 800px;
   margin: 3rem auto;
   padding: 2.5rem;
-  background-color: #2a2a2a;
+  background-color: var(--card-background);
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
-
+  box-shadow: 0 10px 30px var(--shadow-color);
+  font-family: var(--font-family, 'Segoe UI', sans-serif);
+  border: 1px solid var(--border-color);
 }
 
 .cart-page h2 {
-  font-size: 2.2rem;
-  color: #ffffff;
+  font-size: 2rem;
+  color: var(--text-primary);
   margin-bottom: 2rem;
   font-weight: 600;
   letter-spacing: 0.5px;
   text-align: center;
 }
 
-.carrito {
+.cart-page .carrito {
   margin-top: 1.5rem;
-  background-color: #303030;
+  background-color: transparent;
   margin-bottom: 1.5rem;
+  padding: 0;
+  border: none;
+  box-shadow: none;
 }
 
-.carrito h2 {
-  font-size: 2.2rem;
+.cart-page .carrito h2 {
+  font-size: 1.8rem;
+  color: var(--text-primary);
   margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
@@ -35,98 +37,118 @@
   gap: 0.5rem;
 }
 
-.carrito ul {
+.cart-page .carrito ul {
   list-style: none;
   padding: 0;
   margin: 0 0 2rem 0;
 }
 
-.carrito li {
+.cart-page .carrito li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #3a3a3a;
+  background-color: var(--background-secondary);
   margin-bottom: 0.75rem;
   padding: 1rem 1.5rem;
   border-radius: 10px;
-  font-size: 1.05rem;
-  color: #f0f0f0;
+  font-size: 1rem;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.carrito li:hover {
-  background-color: #434343;
-
+.cart-page .carrito li:hover {
+  background-color: #e9ecef;
 }
 
-.carrito button {
-  background-color: #e74c3c;
+.cart-page .carrito .remover-item-btn {
+  background-color: #dc3545;
   color: white;
   border: none;
   border-radius: 6px;
   padding: 0.5rem 0.9rem;
   cursor: pointer;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 500;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.carrito button:hover {
-  background-color: #c0392b;
-
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+.cart-page .carrito .remover-item-btn:hover {
+  background-color: #c82333;
 }
 
-.carrito h3 {
-  font-size: 1.3rem;
-  color: #e0e0e0;
+.cart-page .carrito h3 {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
   margin: 1rem 0;
   font-weight: 500;
   display: flex;
   justify-content: space-between;
   padding: 0.5rem 0;
-  border-bottom: 1px solid #444;
+  border-bottom: 1px solid var(--border-color);
 }
 
-#fin {
-  background-color: #4b6cb7;
+.cart-page #fin {
+  background-color: var(--accent-primary);
+  color: var(--background-primary);
   width: 100%;
   padding: 1rem;
   font-size: 1.1rem;
   margin-top: 1.5rem;
   letter-spacing: 0.5px;
+  border: none;
+  border-radius: 8px;
 }
 
-#fin:hover {
-  background-color: #3a549f;
+.cart-page #fin:hover {
+  background-color: var(--accent-hover);
 }
 
-.empty-cart-message {
-  color: #aaa;
+.cart-page .empty-cart-message {
+  color: var(--text-secondary);
   font-size: 1.2rem;
   text-align: center;
   padding: 2rem;
-  border: 1px dashed #444;
+  border: 2px dashed var(--border-color);
   border-radius: 10px;
   margin-top: 1rem;
+  background-color: var(--background-secondary);
 }
 
-/* Responsive adjustments */
+.cart-page .volver-inicio {
+  background-color: var(--background-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  display: block;
+  width: fit-content;
+  margin: 2rem auto 0;
+}
+
+.cart-page .volver-inicio:hover {
+  background-color: #e2e6ea;
+  border-color: #dae0e5;
+}
+
+
 @media (max-width: 768px) {
   .cart-page {
     padding: 1.5rem;
     margin: 2rem 1rem;
   }
   
-  .carrito li {
+  .cart-page .carrito li {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
     padding: 1rem;
   }
   
-  .carrito button {
+  .cart-page .carrito .remover-item-btn {
     align-self: flex-end;
+    margin-top: 0.5rem;
   }
 }
