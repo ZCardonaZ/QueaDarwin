@@ -16,7 +16,7 @@ function Login({ onLogin }) {
 
     
     onLogin();
-    localStorage.setItem('loggedInUser', username); 
+    localStorage.setItem('currentUser', username);
   };
 
   return (
