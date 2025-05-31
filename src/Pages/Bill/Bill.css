@@ -1,0 +1,160 @@
+.factura {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background-color: #242424;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  color: #dfdfdf;
+  border: 1px solid #474747;
+}
+
+.factura h2 {
+  text-align: center;
+  color: #d7d7d7;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.factura p {
+  margin: 0.75rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #e4e4e4;
+}
+
+.factura p strong {
+  color: #e2e2e2;
+  font-weight: 1000;
+  min-width: 100px;
+  display: inline-block;
+}
+
+.factura ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  border-top: 1px solid #717171;
+  border-bottom: 1px solid #717171;
+  padding: 0.5rem 0;
+}
+
+.factura li {
+  padding: 0.75rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.factura li:not(:last-child) {
+  border-bottom: 1px solid #717171;
+}
+
+.factura h3 {
+  margin: 1.25rem 0 0.5rem;
+  font-weight: 500;
+  text-align: right;
+  font-size: 1.1rem;
+  color: #e4e4e4;
+}
+
+.factura h2:last-of-type {
+  margin-top: 1.5rem;
+  font-weight: 700;
+  text-align: right;
+  font-size: 1.6rem;
+  color: #dbdbdb;
+  padding-top: 0.75rem;
+  border-top: 2px solid #717171;
+}
+
+/*success popup tsyles */
+
+.success-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.success-content {
+  background-color: rgb(45, 45, 45);
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-width: 300px;
+}
+
+.success-content h3 {
+  color: #9abbf6;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.success-content p {
+  color: #dadada;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.success-content::before {
+  content: "✓";
+  display: block;
+  font-size: 3rem;
+  color: #3a549f;
+  margin-bottom: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .factura {
+    padding: 1.5rem;
+    margin: 1rem;
+    border-radius: 12px;
+  }
+  
+  .factura h2 {
+    font-size: 1.5rem;
+  }
+  
+  .factura p {
+    font-size: 0.95rem;
+  }
+  
+  .factura p strong {
+    min-width: 80px;
+  }
+}
+
+.finalizar-btn {
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #4b6cb7;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.finalizar-btn:hover {
+  background-color: #3a549f;
+}
+

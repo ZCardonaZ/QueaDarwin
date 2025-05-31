@@ -1,0 +1,30 @@
+.historial {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  margin-top: 9rem;
+  background: #242424;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #636363;
+  
+}
+
+.factura-item {
+  background: rgb(47, 47, 47);
+
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+}
+
+.factura-item ul {
+  padding-left: 1.5rem;
+  list-style: disc;
+}
+
+.historial-vacio {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1.2rem;
+}

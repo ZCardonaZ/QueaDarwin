@@ -1,0 +1,153 @@
+/* ProductDetail.css */
+
+.detalle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 3rem;
+  background-color: #1c1c1c;
+}
+
+.detalle-card {
+  display: flex;
+  gap: 4rem;
+  max-width: 1200px;
+  width: 100%;
+  background: #2b2b2b;
+  border-radius: 1.5rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  padding: 3rem;
+  transition: transform 0.3s ease;
+}
+
+.detalle-card:hover {
+  transform: translateY(-5px);
+}
+
+.detalle-model {
+  width: 500px;
+  height: 500px;
+  flex-shrink: 0;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  background: #3b3b3b;
+}
+
+.detalle-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex: 1;
+}
+
+.detalle-info h2 {
+  font-size: 2.5rem;
+  color: #dfdfdf;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.detalle-precio {
+  font-size: 2.2rem;
+  color: #b4b3b3;
+  margin: 1.5rem 0;
+  font-weight: 700;
+}
+
+.detalle-descripcion {
+  color: #c6c7c7;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 90%;
+}
+
+.detalle-btn {
+  background-color: #4b6cb7;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.detalle-btn:hover {
+  background-color: #3a549f;
+  transform: translateY(-2px);
+
+}
+
+.detalle-btn:active {
+  transform: translateY(0);
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#fav {
+  background-color: #b8473a;
+}
+
+.volver-container {
+  margin: 0 auto;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .detalle-card {
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 700px;
+  }
+  
+  .detalle-model {
+    width: 100%;
+    height: 400px;
+  }
+  
+  .detalle-info h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .detalle-container {
+    padding: 1.5rem;
+  }
+  
+  .detalle-card {
+    padding: 2rem;
+  }
+  
+  .detalle-model {
+    height: 350px;
+  }
+  
+  .detalle-info h2 {
+    font-size: 2rem;
+  }
+  
+  .detalle-precio {
+    font-size: 1.8rem;
+  }
+  
+  .detalle-btn {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    width: 100%;
+    justify-content: center;
+  }
+}
