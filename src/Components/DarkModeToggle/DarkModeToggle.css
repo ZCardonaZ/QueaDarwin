@@ -1,0 +1,38 @@
+.dark-mode-toggle {
+ 
+  position: fixed;
+
+
+  bottom: 25px;
+  right: 25px;
+
+ 
+  background-color: var(--card-background);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 50%; 
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px var(--shadow-color); 
+
+ 
+  z-index: 1000;
+
+ 
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.dark-mode-toggle:hover {
+  transform: scale(1.1);
+  background-color: var(--background-secondary);
+}
+
+.dark-mode-toggle:focus {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
