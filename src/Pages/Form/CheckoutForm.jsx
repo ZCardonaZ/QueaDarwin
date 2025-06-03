@@ -88,6 +88,7 @@ export default function FormularioCompra({ carrito, setCarrito, setDatosCompra }
           value={form.barrio}
           onChange={handleChange}
           placeholder="Example: Laureles" 
+        />
       </div>
 
       <div className="form-group">
