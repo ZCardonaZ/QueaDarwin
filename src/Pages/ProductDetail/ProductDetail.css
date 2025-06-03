@@ -3,32 +3,36 @@
   justify-content: center;
   align-items: flex-start;
   min-height: calc(100vh - 80px);
-  padding: 3rem;
+  padding: 2.5rem;
   background-color: var(--background-secondary);
   box-sizing: border-box;
 }
 
 .detalle-card {
   display: flex;
-  gap: 3rem;
-  max-width: 1200px;
+  flex-direction: row;
+  gap: 2.5rem;
+  max-width: 1100px;
   width: 100%;
   background: var(--card-background);
-  border-radius: 1rem;
-  box-shadow: 0 10px 30px var(--shadow-color);
-  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px var(--shadow-color);
+  padding: 2.5rem;
   border: 1px solid var(--border-color);
 }
 
 .detalle-model {
-  width: 450px;
-  height: 450px;
-  flex-shrink: 0;
-  border-radius: 1rem;
+  width: 40%;
+  min-width: 300px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 8px 20px var(--shadow-color);
   background: var(--background-secondary);
   border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .detalle-info {
@@ -39,52 +43,48 @@
 }
 
 .detalle-info h2 {
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   color: var(--text-primary);
-  margin-bottom: 1rem;
-  font-weight: 700;
-  line-height: 1.2;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  line-height: 1.25;
 }
 
 .detalle-precio {
-  font-size: 2.2rem;
+  font-size: 2rem;
   color: var(--accent-primary);
-  margin: 1rem 0 1.5rem 0;
-  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
 }
 
 .detalle-descripcion {
   color: var(--text-secondary);
-  font-size: 1.1rem;
-  line-height: 1.7;
-  max-width: 100%;
+  font-size: 1rem;
+  line-height: 1.6;
   margin-bottom: 2rem;
+  flex-grow: 1;
 }
 
 .btn-container {
   display: flex;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .detalle-btn {
   background-color: var(--accent-primary);
-  color: var(--background-primary);
+  color: var(--button-text-color);
   border: none;
-  padding: 0.9rem 1.8rem;
-  font-size: 1.1rem;
-  border-radius: 0.5rem;
+  padding: 0.8em 1.5em;
+  font-size: 1rem;
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.1s ease;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  flex-grow: 1;
-  min-width: 200px;
+  font-weight: 500;
+  text-align: center;
+  width: 100%;
 }
 
 .detalle-btn:hover {
@@ -109,85 +109,7 @@
 
 .volver-container {
   margin-top: auto;
-  text-align: center;
-}
-
-.volver-inicio {
-  background-color: var(--background-secondary);
-  color: var(--text-primary);
-  border: 1px solid var(--border-color);
-  padding: 0.8rem 1.8rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.volver-inicio:hover {
-  background-color: #e2e6ea;
-  border-color: #dae0e5;
-  color: var(--accent-hover);
-}
-
-@media (max-width: 1024px) {
-  .detalle-container {
-    padding: 2rem;
-  }
-  .detalle-card {
-    flex-direction: column;
-    gap: 2rem;
-    padding: 2rem;
-  }
-  
-  .detalle-model {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    margin: 0 auto;
-  }
-  
-  .detalle-info h2 {
-    font-size: 2.3rem;
-    text-align: center;
-  }
-  .detalle-precio {
-    text-align: center;
-  }
-  .detalle-descripcion {
-    text-align: center;
-  }
-  .btn-container {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 768px) {
-  .detalle-container {
-    padding: 1rem;
-  }
-  
-  .detalle-card {
-    padding: 1.5rem;
-  }
-    
-  .detalle-info h2 {
-    font-size: 2rem;
-  }
-  
-  .detalle-precio {
-    font-size: 1.9rem;
-  }
-  
-  .detalle-btn {
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    width: 100%;
-    min-width: initial;
-  }
-  .btn-container {
-    flex-direction: column;
-    gap: 1rem;
-  }
+  text-align: left;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
 }
