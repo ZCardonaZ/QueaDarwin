@@ -69,8 +69,11 @@ function App() {
       setFavoritos((prevFavoritos) => {
         const existe = prevFavoritos.find((p) => p.id === producto.id);
         if (existe) {
-          return prevFavoritos;
+          // Opcional: Mostrar un mensaje de que ya está en favoritos o quitarlo
+          console.log("Producto ya en favoritos");
+          return prevFavoritos.filter(p => p.id !== producto.id); // Ejemplo: Si ya está, lo quita
         } else {
+          console.log("Producto añadido a favoritos");
           return [...prevFavoritos, producto];
         }
       });
@@ -79,6 +82,11 @@ function App() {
     const eliminarFavoritos = (id) => {
       const nuevosFavoritos = favoritos.filter((p) => p.id !== id);
       setFavoritos(nuevosFavoritos);
+    };
+
+    // Función para verificar si un producto está en favoritos
+    const esFavorito = (productoId) => {
+        return favoritos.some(fav => fav.id === productoId);
     };
 
     return (
@@ -94,25 +102,39 @@ function App() {
                                 <div 
                                   key={item.id} 
                                   className="producto"
-                                  onClick={() => navigate(`/producto/${item.id}`)}
-                                  style={{ cursor: "pointer" }}
                                 >
-                                    <model-viewer
-                                        src={item.modelo}
-                                        alt={item.nombre}
-                                        auto-rotate
-                                        camera-controls
-                                        ar
-                                        style={{ width: "250px", height: "250px" }}
-                                    />
-                                    <h2>{item.nombre}</h2>
-                                    <p>${item.precio}</p>
-                                    <button onClick={(e) => {
-                                        e.stopPropagation();
-                                        agregarAlCarrito(item);
-                                      }}
-                                    > 🛒 Agregar al carrito
-                                    </button>
+                                    <div onClick={() => navigate(`/producto/${item.id}`)} style={{ cursor: "pointer", width: '100%'}}>
+                                        <model-viewer
+                                            src={item.modelo}
+                                            alt={item.nombre}
+                                            auto-rotate
+                                            camera-controls
+                                            ar
+                                            // style={{ width: "250px", height: "250px" }} // Estilo movido a App.css
+                                        />
+                                        <h2>{item.nombre}</h2>
+                                        <p>${item.precio}</p>
+                                    </div>
+                                    <div className="producto-botones-container"> {/* Nuevo contenedor para botones */}
+                                        <button className="btn-agregar-carrito" onClick={(e) => {
+                                            e.stopPropagation(); // Evita que el clic se propague al div de navegación
+                                            agregarAlCarrito(item);
+                                          }}
+                                        > 🛒 Agregar al carrito
+                                        </button>
+                                        <button 
+                                          className={`btn-agregar-favoritos ${esFavorito(item.id) ? 'favorito-activo' : ''}`}
+                                          onClick={(e) => {
+                                            e.stopPropagation(); // Evita que el clic se propague al div de navegación
+                                            agregarFavoritos(item);
+                                          }}
+                                          aria-label="Agregar a favoritos"
+                                        >
+                                          {/* Usaremos un corazón SVG o un carácter de corazón */}
+                                          {/* Podrías usar un ícono SVG aquí para un mejor control visual */}
+                                          {esFavorito(item.id) ? '❤️' : '🤍'} {/* Corazón relleno o vacío */}
+                                        </button>
+                                    </div>
                                 </div>
                             ))}
                         </div>

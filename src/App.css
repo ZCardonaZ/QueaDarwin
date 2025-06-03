@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: var(--font-family, 'Segoe UI', sans-serif);
+  font-family: var(--font-family, 'Inter', 'Segoe UI', sans-serif); /* Asegurando que Inter sea la primera opción */
   background-color: var(--background-secondary);
   color: var(--text-primary);
 }
@@ -9,7 +9,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  width: 100%; /* Asegura que .app ocupe el ancho completo de #root */
+  width: 100%; 
 }
 
 .main-content {
@@ -29,28 +29,16 @@ body {
   border-bottom: 1px solid var(--border-color);
 }
 
-.btn-carrito {
-  background-color: var(--accent-primary);
-  color: var(--background-primary);
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  border: none;
-}
-
-.btn-carrito:hover {
-  background-color: var(--accent-hover);
-}
+/* .btn-carrito global (si existe) se puede eliminar si no se usa fuera de la tarjeta */
 
 .galeria {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
+  gap: 2rem; 
+  padding: 2rem; 
   background-color: var(--background-secondary);
-  box-sizing: border-box;
-  width: 100%;
+  box-sizing: border-box; 
+  width: 100%; 
 }
 
 .producto {
@@ -65,7 +53,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
-  cursor: pointer;
+  /* cursor: pointer; No en toda la tarjeta, solo en la parte superior */
 }
 
 .producto:hover {
@@ -98,25 +86,68 @@ body {
   text-align: left;
 }
 
-.producto button {
-  margin: 0;
-  padding: 0.7em 1.3em;
+.producto-botones-container {
+  display: flex; /* Para alinear los botones horizontalmente */
+  gap: 0.75rem; /* Espacio entre el botón de carrito y el de favoritos */
+  margin-top: auto; /* Empuja el contenedor de botones hacia abajo */
+}
+
+.producto .btn-agregar-carrito { /* Estilos específicos para el botón de carrito en la tarjeta */
+  flex-grow: 1; /* Para que el botón de carrito ocupe más espacio si es necesario */
+  padding: 0.7em 1em; /* Padding ajustado */
   background-color: var(--accent-primary);
   color: var(--button-text-color);
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  width: 100%;
   font-size: 0.9rem;
   font-weight: 500;
   transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+  text-align: center;
 }
 
-.producto button:hover {
+.producto .btn-agregar-carrito:hover {
   background-color: var(--accent-hover);
   transform: translateY(-1px);
 }
 
+.producto .btn-agregar-favoritos {
+  padding: 0.7em; /* Padding cuadrado para un botón de ícono */
+  background-color: transparent; /* Fondo transparente */
+  color: var(--text-secondary); /* Color del ícono */
+  border: 1px solid var(--border-color); /* Borde sutil */
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem; /* Tamaño del ícono de corazón */
+  line-height: 1; /* Para centrar bien el carácter de corazón */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  min-width: 40px; /* Ancho mínimo para que sea un cuadrado agradable */
+  aspect-ratio: 1/1; /* Para mantenerlo cuadrado */
+}
+
+.producto .btn-agregar-favoritos:hover {
+  background-color: var(--background-secondary);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.producto .btn-agregar-favoritos.favorito-activo {
+  background-color: transparent; /* Puedes cambiar esto si quieres un fondo cuando está activo */
+  color: #e74c3c; /* Color rojo para el corazón cuando está activo */
+  border-color: #e74c3c; /* Borde rojo */
+}
+
+.producto .btn-agregar-favoritos.favorito-activo:hover {
+  background-color: rgba(231, 76, 60, 0.1); /* Un hover sutil para el estado activo */
+  border-color: #c0392b;
+  color: #c0392b;
+}
+
+
+/* Estilos del carrito (mantener los que ya tenías) */
 .carrito {
   background: var(--card-background);
   border-radius: 8px;
