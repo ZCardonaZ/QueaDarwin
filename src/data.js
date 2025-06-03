@@ -1,27 +1,48 @@
 export const productos = [
     {
       id: 1,
-      nombre: "Silla Oficina",
-      precio: 300000,
-      modelo: "/model/chair.glb",
+      nombre: "Cama",
+      precio: 200000,
+      modelo: "/model/cama.glb",
     },
     {
       id: 2,
-      nombre: "Escritorio",
-      precio: 500000,
-      modelo: "/model/desk.glb",
+      nombre: "Silla de estar",
+      precio: 60000,
+      modelo: "/model/silla.glb",
     },
     {
       id: 3,
-      nombre: "Lámpara de piso",
+      nombre: "Cajon Biblioteca",
       precio: 120000,
-      modelo: "/model/lamp.glb",
+      modelo: "/model/biblio.glb",
     },
     {
         id: 4,
-        nombre: "Puerta de Madera",
+        nombre: "Estante",
         precio: 80000,
-        modelo: "/model/door.glb",
+        modelo: "/model/stan.glb",
+      },
+
+      {
+        id: 5,
+        nombre: "Reloj de Pared",
+        precio: 80000,
+        modelo: "/model/reloj.glb",
+      },
+
+      {
+        id: 6,
+        nombre: "Cuadro de Van Gong Ilimited Version",
+        precio: 9000000000,
+        modelo: "/model/cuadro.glb",
+      },
+
+      {
+        id: 7,
+        nombre: "Planta para sala",
+        precio: 2000,
+        modelo: "/model/planta.glb",
       },
   ];
   
