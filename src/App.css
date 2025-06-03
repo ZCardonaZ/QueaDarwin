@@ -5,6 +5,18 @@ body {
   color: var(--text-primary);
 }
 
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex-grow: 1;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .navbar {
   background-color: var(--background-primary);
   color: var(--text-primary);
@@ -33,9 +45,11 @@ body {
 .galeria {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 2.5rem;
-  padding: 2.5rem;
+  gap: 2rem; /* Ajustado ligeramente el gap */
+  padding: 2rem; /* Ajustado ligeramente el padding */
   background-color: var(--background-secondary);
+  box-sizing: border-box; /* Asegura que el padding no aumente el tamaño total */
+  width: 100%; /* Asegura que la galería use el ancho de .main-content */
 }
 
 .producto {
@@ -63,7 +77,7 @@ body {
   height: 220px;
   border-radius: 6px;
   margin-bottom: 1rem;
-  background-color: var(--background-secondary); /* Fondo para el visor del modelo */
+  background-color: var(--background-secondary);
 }
 
 .producto h2 {
@@ -192,15 +206,4 @@ body {
 .confirmacion h2 {
   color: #004085;
   margin-bottom: 1rem;
-}
-
-.app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.main-content {
-  flex-grow: 1;
-  padding-top: 0; /* Ajusta según la altura de tu navbar si es necesario */
 }
