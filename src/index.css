@@ -1,3 +1,4 @@
+/* src/index.css */
 :root {
   --background-primary: #ffffff;
   --background-secondary: #f8f9fa;
@@ -8,18 +9,75 @@
   --border-color: #dee2e6;
   --card-background: #ffffff;
   --shadow-color: rgba(0, 0, 0, 0.1);
+  --link-color: var(--accent-primary);
+  --button-text-color: var(--background-primary);
+
+  --navbar-background: var(--background-primary);
+  --navbar-text-color: var(--text-primary);
+  --navbar-border-color: var(--border-color);
+  --navbar-brand-color: var(--accent-primary);
+
+  --product-card-background: var(--card-background);
+  --product-card-border: var(--border-color);
+  --product-price-color: var(--accent-primary);
+
+  --input-background: var(--background-primary);
+  --input-border-color: var(--border-color);
+  --input-text-color: var(--text-primary);
+  --input-focus-border-color: var(--accent-primary);
+  --input-focus-shadow-color: rgba(0, 123, 255, 0.25);
+
+  --error-background: #f8d7da;
+  --error-text-color: #721c24;
+  --error-border-color: #f5c6cb;
 
   font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   line-height: 1.6;
   font-weight: 400;
-  color-scheme: light;
+  color-scheme: light; 
   color: var(--text-primary);
-  background-color: var(--background-primary);
+  background-color: var(--background-primary); 
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html.dark-theme {
+  --background-primary: #1a1a1a;   
+  --background-secondary: #242424;  
+  --text-primary: #e0e0e0;       
+  --text-secondary: #a0a0a0;      
+  --accent-primary: #2589f5;      
+  --accent-hover: #4fa3f7;         
+  --border-color: #444444;          
+  --card-background: #2e2e2e;      
+  --shadow-color: rgba(255, 255, 255, 0.08); 
+  --link-color: var(--accent-primary);
+  --button-text-color: #0d0d0d; 
+
+ 
+  --navbar-background: #212121;
+  --navbar-text-color: var(--text-primary);
+  --navbar-border-color: #383838;
+  --navbar-brand-color: var(--accent-primary);
+
+  --product-card-background: var(--card-background);
+  --product-card-border: var(--border-color);
+  --product-price-color: var(--accent-primary);
+
+  --input-background: #333333;
+  --input-border-color: #555555;
+  --input-text-color: var(--text-primary);
+  --input-focus-border-color: var(--accent-primary);
+  --input-focus-shadow-color: rgba(37, 137, 245, 0.3);
+
+  --error-background: #521822;
+  --error-text-color: #f8d7da;
+  --error-border-color: #672a32;
+
+  color-scheme: dark;
 }
 
 body {
@@ -29,8 +87,9 @@ body {
   align-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: var(--background-secondary);
+  background-color: var(--background-secondary); 
   color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
 #root {
@@ -42,7 +101,7 @@ body {
 
 a {
   font-weight: 500;
-  color: var(--accent-primary);
+  color: var(--link-color);
   text-decoration: none;
   transition: color 0.2s ease-in-out;
 }
@@ -70,9 +129,9 @@ button {
   font-weight: 500;
   font-family: inherit;
   background-color: var(--accent-primary);
-  color: var(--background-primary);
+  color: var(--button-text-color);
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, transform 0.1s ease;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.1s ease;
 }
 button:hover {
   background-color: var(--accent-hover);
@@ -86,13 +145,14 @@ button:focus-visible {
 }
 
 button.secondary {
-  background-color: var(--background-primary);
+  background-color: var(--card-background);
   color: var(--accent-primary);
   border: 1px solid var(--accent-primary);
 }
 
 button.secondary:hover {
   background-color: var(--accent-primary);
-  color: var(--background-primary);
+  color: var(--button-text-color);
   border: 1px solid var(--accent-primary);
 }
+
