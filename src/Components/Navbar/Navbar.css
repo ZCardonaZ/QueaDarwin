@@ -5,47 +5,48 @@
   right: 0;
   margin: 0;
   z-index: 999;
-  background-color: var(--background-primary);
-  padding: 0.8rem 2rem;
+  background-color: var(--navbar-background, var(--background-primary));
+  padding: 0.9rem 2.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--border-color);
-  box-shadow: 0 1px 3px var(--shadow-color);
+  border-bottom: 1px solid var(--navbar-border-color, var(--border-color));
+  box-shadow: 0 1px 4px var(--shadow-color);
 }
 
 .navbar-brand h1 {
   margin: 0;
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   font-weight: 700;
-  color: var(--accent-primary);
+  color: var(--navbar-brand-color, var(--accent-primary));
   cursor: pointer;
   transition: opacity 0.2s ease;
 }
 
 .navbar-brand h1:hover {
-  opacity: 0.85;
+  opacity: 0.8;
 }
 
 .navbar-actions {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: 1.5rem;
 }
 
 .navbar-actions button,
 .navbar-actions .icon-container {
   background: none;
   border: none;
-  color: var(--text-secondary);
+  color: var(--navbar-text-color, var(--text-secondary));
   cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 6px;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
   transition: color 0.2s ease, background-color 0.2s ease;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
+  font-weight: 500;
 }
 
 .navbar-actions button:hover,
@@ -60,18 +61,19 @@
 
 .badge {
   position: absolute;
-  top: -5px;
-  right: -5px;
+  top: -6px;
+  right: -6px;
   background-color: var(--accent-primary);
-  color: var(--background-primary);
+  color: var(--button-text-color, var(--background-primary));
   border-radius: 50%;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: bold;
+  border: 1px solid var(--card-background);
 }
 
 .user-dropdown {
@@ -80,50 +82,60 @@
 }
 
 .user-button {
-  color: var(--text-primary);
+  color: var(--navbar-text-color, var(--text-primary));
   background-color: transparent;
   border: 1px solid transparent;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
+  padding: 0.6rem 1.1rem;
+  border-radius: 25px;
   cursor: pointer;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
   font-weight: 500;
+  font-size: 0.9rem;
 }
 
 .user-button:hover,
 .user-button.active {
   background-color: var(--background-secondary);
   border-color: var(--border-color);
+  color: var(--accent-primary);
 }
 
 .dropdown-icon {
-  margin-left: 0.3rem;
-  font-size: 0.8em;
+  margin-left: 0.4rem;
+  font-size: 0.75em;
+  transition: transform 0.2s ease;
+}
+
+.user-button.active .dropdown-icon {
+  transform: rotate(180deg);
 }
 
 .dropdown-menu {
   position: absolute;
   right: 0;
-  top: calc(100% + 10px);
-  background-color: var(--background-primary);
-  border-radius: 8px;
-  box-shadow: 0 4px 12px var(--shadow-color);
-  min-width: 180px;
+  top: calc(100% + 12px);
+  background-color: var(--card-background);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px var(--shadow-color);
+  min-width: 200px;
   z-index: 1000;
   overflow: hidden;
   border: 1px solid var(--border-color);
+  padding: 0.5rem 0;
 }
 
 .dropdown-item {
   width: 100%;
-  padding: 0.75rem 1.2rem;
+  padding: 0.8rem 1.3rem;
   text-align: left;
   background: transparent;
   border: none;
   color: var(--text-primary);
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  display: block;
+  box-sizing: border-box;
 }
 
 .dropdown-item:hover {
@@ -136,14 +148,20 @@
   font-size: 1.8rem;
   background: none;
   border: none;
-  color: var(--text-primary);
+  color: var(--navbar-text-color, var(--text-primary));
   cursor: pointer;
   padding: 0.5rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.hamburger-menu:hover {
+    background-color: var(--background-secondary);
+    color: var(--accent-primary);
 }
 
 @media (max-width: 768px) {
   .navbar {
-    padding: 0.8rem 1rem;
+    padding: 0.8rem 1.5rem;
   }
   .hamburger-menu {
     display: block;
@@ -155,12 +173,13 @@
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: var(--background-primary);
+    left: 0;
+    background-color: var(--card-background);
     flex-direction: column;
     align-items: stretch;
-    border-radius: 0 0 8px 8px;
-    padding: 1rem;
-    width: 200px;
+    border-radius: 0 0 10px 10px;
+    padding: 0.5rem 0;
+    width: auto;
     box-shadow: 0 8px 16px var(--shadow-color);
     border: 1px solid var(--border-color);
     border-top: none;
@@ -175,18 +194,49 @@
   .user-dropdown {
     width: 100%;
     justify-content: flex-start;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0;
+    border-bottom: 1px solid var(--border-color);
   }
   
+  .navbar-actions button:last-child,
+  .navbar-actions .icon-container:last-child,
+  .user-dropdown:last-child {
+      border-bottom: none;
+  }
+
   .user-button {
      justify-content: space-between;
+     width: 100%;
+     border-radius: 0;
+  }
+  
+  .user-button:hover,
+  .user-button.active {
+      background-color: var(--background-secondary);
   }
 
   .dropdown-menu {
     position: static;
     box-shadow: none;
-    margin-top: 0.5rem;
+    margin-top: 0;
     border: none;
     border-top: 1px solid var(--border-color);
     border-radius: 0;
+    width: 100%;
+    padding: 0;
+  }
+
+  .dropdown-item {
+      padding: 0.8rem 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+  }
+  .dropdown-item:last-child {
+      border-bottom: none;
+  }
+
+  .badge {
+      top: 8px;
+      right: 12px;
   }
 }
