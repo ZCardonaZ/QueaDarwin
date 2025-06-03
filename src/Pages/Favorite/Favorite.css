@@ -1,110 +1,119 @@
 .favoritos {
   max-width: 1200px;
-  margin: 2rem auto;
+  margin: 2.5rem auto;
   padding: 2rem;
-  background-color: var(--background-secondary);
+  background-color: var(--card-background);
   border-radius: 12px;
-  box-shadow: 0 5px 15px var(--shadow-color);
+  box-shadow: 0 6px 20px var(--shadow-color);
   color: var(--text-primary);
+  border: 1px solid var(--border-color);
 }
 
 .favoritos h2 {
   text-align: center;
   margin-bottom: 2.5rem;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--text-primary);
   font-weight: 600;
 }
 
 .favoritos-vacio {
   text-align: center;
-  margin-top: 3rem;
-  font-size: 1.2rem;
+  margin-top: 2rem;
+  font-size: 1.1rem;
   color: var(--text-secondary);
-  padding: 2rem;
-  background-color: var(--card-background);
-  border-radius: 8px;
-  border: 1px dashed var(--border-color);
+  padding: 2.5rem 1.5rem;
+  background-color: var(--background-secondary);
+  border-radius: 10px;
+  border: 2px dashed var(--border-color);
 }
 
 .favoritos-lista {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 2rem;
 }
 
 .favorito-card {
   background: var(--card-background);
   border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 1.5rem;
-  text-align: center;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
-  align-items: center;
   box-shadow: 0 2px 8px var(--shadow-color);
 }
 
 .favorito-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px var(--shadow-color);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px var(--shadow-color);
 }
 
 .favorito-card .detalle-model {
-  background-color: var(--background-secondary);
-  border-radius: 8px;
+  width: 100%;
+  height: 220px;
+  border-radius: 6px;
   margin-bottom: 1rem;
-  border: 1px solid var(--border-color);
+  background-color: var(--background-secondary);
 }
 
 .favorito-card h3 {
-  margin-top: 0.8rem;
-  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
   color: var(--text-primary);
   font-weight: 600;
+  line-height: 1.3;
 }
 
 .favorito-card p {
-  color: var(--text-secondary);
-  font-size: 1rem;
-  margin: 0.5rem 0 1rem 0;
+  color: var(--accent-primary);
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
 }
 
 .favorito-card .btn-container {
   display: flex;
-  gap: 0.8rem;
+  flex-direction: column;
+  gap: 0.75rem;
   margin-top: auto;
   width: 100%;
 }
 
-.favorito-card .quitar-favorito,
-.favorito-card .ver-detalles-btn {
-  flex: 1;
-  padding: 0.6em 1em;
+.favorito-card .btn-fav {
+  padding: 0.6em 1.2em;
   font-size: 0.9rem;
   border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.1s ease, border-color 0.2s ease, color 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.favorito-card .btn-fav:hover {
+  transform: translateY(-1px);
 }
 
 .favorito-card .quitar-favorito {
-  background-color: #dc3545;
+  background-color: #e74c3c;
   color: white;
-  border: 1px solid #dc3545;
 }
 .favorito-card .quitar-favorito:hover {
-  background-color: #c82333;
-  border-color: #c82333;
+  background-color: #c0392b;
 }
 
 .favorito-card .ver-detalles-btn {
   background-color: var(--accent-primary);
-  color: var(--background-primary);
-  border: 1px solid var(--accent-primary);
+  color: var(--button-text-color);
 }
 
 .favorito-card .ver-detalles-btn:hover {
   background-color: var(--accent-hover);
-  border-color: var(--accent-hover);
 }
 
 
@@ -112,36 +121,31 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 #empty-btn, .favoritos > button {
-  background-color: var(--accent-primary);
-  color: var(--background-primary);
-  border: 1px solid var(--accent-primary);
-  padding: 0.7rem 1.5rem;
+  background-color: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  padding: 0.7em 1.3em;
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+  display: inline-block;
+  margin-top: 1.5rem;
 }
 
 #empty-btn:hover, .favoritos > button:hover {
-  background-color: var(--accent-hover);
-  border-color: var(--accent-hover);
+  background-color: var(--background-secondary);
+  border-color: var(--text-secondary);
+  color: var(--text-primary);
   transform: translateY(-1px);
 }
 
 .favoritos > button {
   display: block;
   margin: 2.5rem auto 0;
-  background-color: var(--background-secondary);
-  color: var(--accent-primary);
-  border: 1px solid var(--accent-primary);
-}
-
-.favoritos > button:hover {
-  background-color: var(--accent-primary);
-  color: var(--background-primary);
 }
