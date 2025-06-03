@@ -1,4 +1,5 @@
-/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 :root {
   --background-primary: #ffffff;
   --background-secondary: #f8f9fa;
@@ -31,12 +32,12 @@
   --error-text-color: #721c24;
   --error-border-color: #f5c6cb;
 
-  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   line-height: 1.6;
   font-weight: 400;
-  color-scheme: light; 
+  color-scheme: light;
   color: var(--text-primary);
-  background-color: var(--background-primary); 
+  background-color: var(--background-primary);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -45,19 +46,18 @@
 }
 
 html.dark-theme {
-  --background-primary: #1a1a1a;   
-  --background-secondary: #242424;  
-  --text-primary: #e0e0e0;       
-  --text-secondary: #a0a0a0;      
-  --accent-primary: #2589f5;      
-  --accent-hover: #4fa3f7;         
-  --border-color: #444444;          
-  --card-background: #2e2e2e;      
-  --shadow-color: rgba(255, 255, 255, 0.08); 
+  --background-primary: #1a1a1a;
+  --background-secondary: #242424;
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0a0a0;
+  --accent-primary: #2589f5;
+  --accent-hover: #4fa3f7;
+  --border-color: #444444;
+  --card-background: #2e2e2e;
+  --shadow-color: rgba(255, 255, 255, 0.08);
   --link-color: var(--accent-primary);
-  --button-text-color: #0d0d0d; 
+  --button-text-color: #0d0d0d;
 
- 
   --navbar-background: #212121;
   --navbar-text-color: var(--text-primary);
   --navbar-border-color: #383838;
@@ -87,16 +87,17 @@ body {
   align-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: var(--background-secondary); 
+  background-color: var(--background-secondary);
   color: var(--text-primary);
-  transition: background-color 0.3s ease, color 0.3s ease; 
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: var(--font-family); /* Aplicando la variable aquí */
 }
 
 #root {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* Esto podría centrar el contenido si .app no tiene width: 100% */
 }
 
 a {
@@ -127,7 +128,7 @@ button {
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
-  font-family: inherit;
+  font-family: inherit; /* Hereda la fuente del body/root */
   background-color: var(--accent-primary);
   color: var(--button-text-color);
   cursor: pointer;
@@ -155,4 +156,3 @@ button.secondary:hover {
   color: var(--button-text-color);
   border: 1px solid var(--accent-primary);
 }
-
