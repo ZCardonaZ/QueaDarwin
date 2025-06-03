@@ -25,7 +25,12 @@ export default function Bill({ datos }) {
     <div className="factura">
       <h2>Factura de compra</h2>
       <p><strong>Nombre:</strong> {datos.nombre}</p>
-      <p><strong>Dirección:</strong> {datos.direccion}, {datos.ciudad}</p>
+      {/* Campos nuevos y modificados para la dirección */}
+      <p><strong>País:</strong> {datos.pais}</p>
+      <p><strong>Ciudad:</strong> {datos.ciudad}</p>
+      <p><strong>Barrio:</strong> {datos.barrio}</p>
+      <p><strong>Dirección:</strong> {datos.direccion}</p>
+      {/* Fin de campos de dirección */}
       <p><strong>Teléfono:</strong> {datos.telefono}</p>
       <p><strong>Fecha:</strong> {datos.fecha}</p>
 
