@@ -45,7 +45,7 @@ export const Navbar = ({ carrito, favorito }) => {
    <header className="navbar">
     <div className="navbar-brand">
       <h1 onClick={goToHome} style={{ cursor: "pointer" }}>
-        Tienda 3D
+        YQUEA
       </h1>
     </div>
 
@@ -61,7 +61,7 @@ export const Navbar = ({ carrito, favorito }) => {
       <button className="icon-container" id="fav" onClick={() => {
         navigate("/favorite");
         setMobileMenuOpen(false);}}>
-          <span className="fav-icon">🤍 Favoritos</span>
+          <span className="fav-icon">Favoritos</span>
             {favorito.length > 0 && (
           <span className="badge">{favorito.length}</span>
           )}
@@ -71,7 +71,7 @@ export const Navbar = ({ carrito, favorito }) => {
           goToCart(); 
           setMobileMenuOpen(false);
         }}>
-          <span className="cart-icon">🛒 Mi carrito</span>
+          <span className="cart-icon">Carro de compras</span>
             {carrito.length > 0 && (
           <span className="badge">{carrito.length}</span>
           )}
@@ -81,7 +81,7 @@ export const Navbar = ({ carrito, favorito }) => {
         navigate("/history");
         setMobileMenuOpen(false);
         }}>
-        📋 Historial
+        Tus compras
       </button>
 
       <div className="user-dropdown">

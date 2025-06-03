@@ -29,20 +29,20 @@ function ProductDetail({agregarAlCarrito, agregarFavoritos}){
                     <h2>{product.nombre}</h2>
                         <p className="detalle-precio">${product.precio}</p>
                         <p className="detalle-descripcion">
-                            Este es un excelente producto para tu hogar u oficina.
+                            
                         </p>
                     <div className="btn-container">
                         <button 
                             className = "detalle-btn"
                             onClick={() => agregarAlCarrito(product)}
                         > 
-                            🛒 Agregar al carrito
+                            Agregar a tus compras
                         </button>
                         <button 
                         className="detalle-btn" id="fav"
                         onClick={() => agregarFavoritos(product)}
                         >
-                            🤍 Añadir a favoritos
+                            Añadir a favoritos
                         </button>
                     </div>
                     <div className="volver-container">

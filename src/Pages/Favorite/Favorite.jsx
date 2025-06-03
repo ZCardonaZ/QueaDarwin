@@ -18,7 +18,7 @@ export default function Favoritos({ favoritos, eliminarFavoritos }) {
 
     return (
     <div className="favoritos">
-        <h2>❤️ Tus productos favoritos</h2>
+        <h2>Tus productos favoritos</h2>
         <div className="favoritos-lista">
             {favoritos.map((p) => (
                 <div key={p.id} className="favorito-card">
@@ -38,7 +38,7 @@ export default function Favoritos({ favoritos, eliminarFavoritos }) {
                            className="quitar-favorito"
                            onClick={() => eliminarFavoritos(p.id)}
                        >
-                           ❌ Quitar
+                           Eliminar
                        </button>
                     
                        <button

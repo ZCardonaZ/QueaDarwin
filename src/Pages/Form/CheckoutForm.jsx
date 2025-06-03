@@ -7,7 +7,9 @@ export default function FormularioCompra({ carrito, setCarrito, setDatosCompra }
   const [form, setForm] = useState({
     nombre: "",
     direccion: "",
+    barrio: "", 
     ciudad: "",
+    pais: "",   
     telefono: "",
   });
 
@@ -28,7 +30,7 @@ export default function FormularioCompra({ carrito, setCarrito, setDatosCompra }
     resumen.iva = resumen.subtotal * 0.19;
     resumen.total = resumen.subtotal + resumen.iva;
 
-    setDatosCompra(resumen);
+    setDatosCompra(resumen); 
     setCarrito([]);
     navigate("/bill");
   };
@@ -44,23 +46,25 @@ export default function FormularioCompra({ carrito, setCarrito, setDatosCompra }
           name="nombre"
           type="text"
           required
+          value={form.nombre}
           onChange={handleChange}
-          placeholder="Ej: Juan Pérez"
+          placeholder="Ej: Ana García"
         />
       </div>
       
       <div className="form-group">
-        <label htmlFor="direccion">Dirección de envío</label>
+        <label htmlFor="pais">País</label>
         <input
-          id="direccion"
-          name="direccion"
+          id="pais"
+          name="pais"
           type="text"
           required
+          value={form.pais}
           onChange={handleChange}
-          placeholder="Ej: Calle 123 #45-67"
+          placeholder="Example: Colombia" 
         />
       </div>
-      
+
       <div className="form-group">
         <label htmlFor="ciudad">Ciudad</label>
         <input
@@ -68,8 +72,34 @@ export default function FormularioCompra({ carrito, setCarrito, setDatosCompra }
           name="ciudad"
           type="text"
           required
+          value={form.ciudad}
           onChange={handleChange}
-          placeholder="Ej: Bogotá"
+          placeholder="Example: Medellín" 
+        />
+      </div>
+
+      <div className="form-group">
+        <label htmlFor="barrio">Barrio</label>
+        <input
+          id="barrio"
+          name="barrio"
+          type="text"
+          required
+          value={form.barrio}
+          onChange={handleChange}
+          placeholder="Example: Laureles" 
+      </div>
+
+      <div className="form-group">
+        <label htmlFor="direccion">Dirección de envío</label>
+        <input
+          id="direccion"
+          name="direccion"
+          type="text"
+          required
+          value={form.direccion}
+          onChange={handleChange}
+          placeholder="Ej: Carrera 5 # 10-20"
         />
       </div>
       
@@ -80,8 +110,9 @@ export default function FormularioCompra({ carrito, setCarrito, setDatosCompra }
           name="telefono"
           type="tel"
           required
+          value={form.telefono}
           onChange={handleChange}
-          placeholder="Ej: 3001234567"
+          placeholder="Ej: 3219876543"
         />
       </div>
       
