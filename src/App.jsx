@@ -69,9 +69,9 @@ function App() {
       setFavoritos((prevFavoritos) => {
         const existe = prevFavoritos.find((p) => p.id === producto.id);
         if (existe) {
-          // Opcional: Mostrar un mensaje de que ya está en favoritos o quitarlo
+          
           console.log("Producto ya en favoritos");
-          return prevFavoritos.filter(p => p.id !== producto.id); // Ejemplo: Si ya está, lo quita
+          return prevFavoritos.filter(p => p.id !== producto.id); 
         } else {
           console.log("Producto añadido a favoritos");
           return [...prevFavoritos, producto];
@@ -84,7 +84,7 @@ function App() {
       setFavoritos(nuevosFavoritos);
     };
 
-    // Función para verificar si un producto está en favoritos
+    
     const esFavorito = (productoId) => {
         return favoritos.some(fav => fav.id === productoId);
     };
@@ -110,28 +110,27 @@ function App() {
                                             auto-rotate
                                             camera-controls
                                             ar
-                                            // style={{ width: "250px", height: "250px" }} // Estilo movido a App.css
+                                            
                                         />
                                         <h2>{item.nombre}</h2>
                                         <p>${item.precio}</p>
                                     </div>
                                     <div className="producto-botones-container"> {/* Nuevo contenedor para botones */}
                                         <button className="btn-agregar-carrito" onClick={(e) => {
-                                            e.stopPropagation(); // Evita que el clic se propague al div de navegación
+                                            e.stopPropagation(); 
                                             agregarAlCarrito(item);
                                           }}
-                                        > 🛒 Agregar al carrito
+                                        > Agregar al carro
                                         </button>
                                         <button 
                                           className={`btn-agregar-favoritos ${esFavorito(item.id) ? 'favorito-activo' : ''}`}
                                           onClick={(e) => {
-                                            e.stopPropagation(); // Evita que el clic se propague al div de navegación
+                                            e.stopPropagation(); 
                                             agregarFavoritos(item);
                                           }}
                                           aria-label="Agregar a favoritos"
                                         >
-                                          {/* Usaremos un corazón SVG o un carácter de corazón */}
-                                          {/* Podrías usar un ícono SVG aquí para un mejor control visual */}
+                                          
                                           {esFavorito(item.id) ? '❤️' : '🤍'} {/* Corazón relleno o vacío */}
                                         </button>
                                     </div>

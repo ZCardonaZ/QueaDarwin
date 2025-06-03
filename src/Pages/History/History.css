@@ -1,98 +1,114 @@
 .historial {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 2.5rem;
-  background-color: var(--background-secondary);
+  max-width: 900px;
+  margin: 2.5rem auto;
+  padding: 2rem;
+  background-color: var(--card-background);
   border-radius: 12px;
-  box-shadow: 0 5px 15px var(--shadow-color);
+  box-shadow: 0 6px 20px var(--shadow-color);
   color: var(--text-primary);
+  border: 1px solid var(--border-color);
 }
 
 .historial h2 {
   text-align: center;
   color: var(--text-primary);
-  margin-bottom: 2rem;
-  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  font-size: 1.8rem;
   font-weight: 600;
 }
 
 .factura-item {
-  background: var(--card-background);
+  background: var(--background-secondary);
   padding: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   border-radius: 10px;
   border: 1px solid var(--border-color);
-  box-shadow: 0 2px 8px var(--shadow-color);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
 }
 
 .factura-item p {
-  margin: 0.5rem 0;
+  margin: 0.6rem 0;
   color: var(--text-secondary);
   font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .factura-item p strong {
   color: var(--text-primary);
-  font-weight: 600;
+  font-weight: 500;
+  min-width: 90px;
+  display: inline-block;
 }
 
 .factura-item ul {
-  padding-left: 1.5rem;
-  list-style: disc;
+  padding-left: 0;
+  list-style: none;
   margin: 1rem 0;
   color: var(--text-primary);
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
 }
 
 .factura-item li {
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
   font-size: 0.95rem;
+  padding: 0.25rem 0;
+}
+
+.factura-item p[class*="total"] {
+    font-weight: 500;
+}
+.factura-item p:last-child {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent-primary);
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--accent-primary);
 }
 
 .factura-item hr {
   border: 0;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px dashed var(--border-color);
   margin: 1.5rem 0;
 }
 
 .historial .volver-inicio,
 .historial #empty-btn {
-  display: block;
-  width: fit-content;
-  margin: 2rem auto 0;
-  background-color: var(--accent-primary);
-  color: var(--background-primary);
-  border: 1px solid var(--accent-primary);
-  padding: 0.7rem 1.5rem;
+  background-color: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  padding: 0.7em 1.3em;
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+  display: block;
+  width: fit-content;
+  margin: 2.5rem auto 0;
 }
 
 .historial .volver-inicio:hover,
 .historial #empty-btn:hover {
-  background-color: var(--accent-hover);
-  border-color: var(--accent-hover);
+  background-color: var(--background-secondary);
+  border-color: var(--text-secondary);
+  color: var(--text-primary);
   transform: translateY(-1px);
 }
 
 .vacio {
   text-align: center;
-  padding: 2rem;
+  padding: 1rem 0 0 0;
 }
 
 .historial-vacio {
   text-align: center;
-  margin-top: 1rem;
-  font-size: 1.2rem;
+  margin-top: 0;
+  font-size: 1.1rem;
   color: var(--text-secondary);
-  background-color: var(--card-background);
-  padding: 2rem;
-  border-radius: 8px;
-  border: 1px dashed var(--border-color);
-}
-
-.historial #empty-btn {
-  margin-top: 1.5rem;
+  background-color: var(--background-secondary);
+  padding: 2.5rem 1.5rem;
+  border-radius: 10px;
+  border: 2px dashed var(--border-color);
 }
