@@ -1,46 +1,45 @@
 .cart-page {
-  max-width: 800px;
-  margin: 3rem auto;
-  padding: 2.5rem;
+  max-width: 850px;
+  margin: 2.5rem auto;
+  padding: 2rem;
   background-color: var(--card-background);
-  border-radius: 16px;
-  box-shadow: 0 10px 30px var(--shadow-color);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px var(--shadow-color);
   font-family: var(--font-family, 'Segoe UI', sans-serif);
   border: 1px solid var(--border-color);
 }
 
 .cart-page h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--text-primary);
   margin-bottom: 2rem;
   font-weight: 600;
-  letter-spacing: 0.5px;
   text-align: center;
 }
 
 .cart-page .carrito {
-  margin-top: 1.5rem;
+  margin-top: 0;
   background-color: transparent;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   padding: 0;
   border: none;
   box-shadow: none;
 }
 
 .cart-page .carrito h2 {
-  font-size: 1.8rem;
-  color: var(--text-primary);
+  font-size: 1.5rem;
+  color: var(--text-secondary);
   margin-bottom: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
+  font-weight: 500;
+  text-align: left;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .cart-page .carrito ul {
   list-style: none;
   padding: 0;
-  margin: 0 0 2rem 0;
+  margin: 0 0 1.5rem 0;
 }
 
 .cart-page .carrito li {
@@ -48,39 +47,42 @@
   justify-content: space-between;
   align-items: center;
   background-color: var(--background-secondary);
-  margin-bottom: 0.75rem;
-  padding: 1rem 1.5rem;
-  border-radius: 10px;
+  margin-bottom: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
   font-size: 1rem;
   color: var(--text-primary);
   border: 1px solid var(--border-color);
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  transition: box-shadow 0.2s ease;
 }
 
 .cart-page .carrito li:hover {
-  background-color: #e9ecef;
+  box-shadow: 0 2px 8px var(--shadow-color);
 }
 
-.cart-page .carrito .remover-item-btn {
-  background-color: #dc3545;
+.cart-page .carrito .remover-item-btn,
+.cart-page .carrito li button {
+  background-color: #e74c3c;
   color: white;
   border: none;
   border-radius: 6px;
-  padding: 0.5rem 0.9rem;
+  padding: 0.4em 0.8em;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 500;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease;
+  margin-left: 1rem;
 }
 
-.cart-page .carrito .remover-item-btn:hover {
-  background-color: #c82333;
+.cart-page .carrito .remover-item-btn:hover,
+.cart-page .carrito li button:hover {
+  background-color: #c0392b;
 }
 
 .cart-page .carrito h3 {
   font-size: 1.1rem;
   color: var(--text-secondary);
-  margin: 1rem 0;
+  margin: 0.75rem 0;
   font-weight: 500;
   display: flex;
   justify-content: space-between;
@@ -88,67 +90,12 @@
   border-bottom: 1px solid var(--border-color);
 }
 
-.cart-page #fin {
-  background-color: var(--accent-primary);
-  color: var(--background-primary);
-  width: 100%;
-  padding: 1rem;
-  font-size: 1.1rem;
-  margin-top: 1.5rem;
-  letter-spacing: 0.5px;
-  border: none;
-  border-radius: 8px;
-}
-
-.cart-page #fin:hover {
-  background-color: var(--accent-hover);
-}
-
-.cart-page .empty-cart-message {
-  color: var(--text-secondary);
-  font-size: 1.2rem;
-  text-align: center;
-  padding: 2rem;
-  border: 2px dashed var(--border-color);
-  border-radius: 10px;
-  margin-top: 1rem;
-  background-color: var(--background-secondary);
-}
-
-.cart-page .volver-inicio {
-  background-color: var(--background-secondary);
+.cart-page .carrito h3:last-of-type {
   color: var(--text-primary);
-  border: 1px solid var(--border-color);
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
-  display: block;
-  width: fit-content;
-  margin: 2rem auto 0;
-}
-
-.cart-page .volver-inicio:hover {
-  background-color: #e2e6ea;
-  border-color: #dae0e5;
-}
-
-
-@media (max-width: 768px) {
-  .cart-page {
-    padding: 1.5rem;
-    margin: 2rem 1rem;
-  }
-  
-  .cart-page .carrito li {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-    padding: 1rem;
-  }
-  
-  .cart-page .carrito .remover-item-btn {
-    align-self: flex-end;
-    margin-top: 0.5rem;
-  }
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-top: 2px solid var(--accent-primary);
+  border-bottom: none;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
 }
